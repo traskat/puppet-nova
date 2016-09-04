@@ -157,7 +157,8 @@ class nova::compute::libvirt (
   service { 'libvirt' :
     ensure   => running,
     enable   => true,
-    name     => $libvirt_service_name,
+    #name     => $libvirt_service_name,
+    name     => 'libvirtd',
     provider => $::nova::params::special_service_provider,
     require  => Package['libvirt'],
   }
